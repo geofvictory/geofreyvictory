@@ -58,12 +58,9 @@ a:hover {
   text-decoration-color: rgb(181, 181, 181);
 }
 
-.logo {
-  font-size: 2rem;
-}
 
 .logo:hover {
-  cursor: default;
+  cursor: pointer;
 }
 
 /* HAMBURGER MENU */
@@ -379,6 +376,16 @@ article .icon {
   color: black;
   border-color: rgb(163, 163, 163);
 }
+/* AWARDS */
+
+.award-pic {
+  border-radius: 2rem;
+  padding: 5px;
+  width: 150px;
+  height: 150px;
+  justify-items: center;
+}
+
 
 /* CONTACT */
 
