@@ -392,6 +392,15 @@ article .icon {
   justify-items: center;
 }
 
+.arrowcontact {
+  position: relative;
+  right: -73rem;
+  bottom: 2.5rem;
+  cursor: pointer;
+  height: 2rem;
+}
+
+
 
 /* CONTACT */
 
