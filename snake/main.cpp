@@ -1,6 +1,5 @@
 #include <iostream>
-#include <conio.h>
-#include <windows.h>
+#include <curses.h>
 using namespace std;
 bool gameOver;
 const int width = 20;
@@ -66,9 +65,9 @@ void Draw()
 }
 void Input()
 {
-	if (_kbhit())
+	if (getch())
 	{
-		switch (_getch())
+		switch (getch())
 		{
 		case 'a':
 			dir = LEFT;
