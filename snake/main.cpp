@@ -1,5 +1,5 @@
 #include <iostream>
-#include <curses.h>
+#include <windows.h>
 using namespace std;
 bool gameOver;
 const int width = 20;
@@ -21,7 +21,7 @@ void Setup()
 }
 void Draw()
 {
-	system("cls"); //system("clear");
+	system("cls");
 	for (int i = 0; i < width+2; i++)
 		cout << "#";
 	cout << endl;
