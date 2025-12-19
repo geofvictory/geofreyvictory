@@ -1,18 +1,321 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Geofrey Victory</title>
-    <link rel="icon" type="image/x-icon" href="./assets/logo.png" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
-  </head>
-  <body>
-    <nav id="desktop-nav">
-      <div><a href="index.html"><img src="./assets/logo.png" class="logo"></a></div>
-      <div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Geofrey Victory</title>
+  <link rel="icon" type="image/x-icon" href="./assets/logo.png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="mediaqueries.css" />
+</head>
+
+<body>
+  <nav id="desktop-nav">
+    <div><a href="index.html"><img src="./assets/logo.png" class="logo"></a></div>
+    <div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#awards">Awards</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <nav id="hamburger-nav">
+    <div><a href="index.html"><img src="/assets/logo.png" class="logo"></a></div>
+    <div class="hamburger-menu">
+      <div class="hamburger-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="menu-links">
+        <li><a href="#about" onclick="toggleMenu()">About</a></li>
+        <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+        <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+        <li><a href="#awards">Awards</a></li>
+        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+      </div>
+    </div>
+  </nav>
+  <section id="profile">
+    <div class="section__pic-container">
+      <img src="assets/profile-pic.png" alt="Profile picture" class="profile-pic" />
+    </div>
+    <div class="section__text">
+      <p class="section__text__p1">Hello, I'm</p>
+      <h1 class="title">Geofrey Victory</h1>
+      <p class="section__text__p2">Technical Writer</p>
+      <div class="btn-container">
+        <button class="btn btn-color-2"
+          onclick="window.open('https://docs.google.com/document/d/16erF8Qj_Y5Gp_J_gq_OBRZ53u1FeN9ln/edit?usp=sharing&ouid=107649084665111973537&rtpof=true&sd=true')">
+          Résumé
+        </button>
+        <button class="btn btn-color-1" onclick="location.href='./#contact'">
+          Contact Info
+        </button>
+      </div>
+      <div id="socials-container">
+        <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon"
+          onclick="location.href='https://www.linkedin.com/in/geofrey-victory/'" />
+        <img src="./assets/github.png" alt="My Github profile" class="icon"
+          onclick="location.href='https://github.com/geofvictory'" />
+      </div>
+    </div>
+  </section>
+  <section id="about">
+    <p class="section__text__p1">Get To Know More</p>
+    <h1 class="title">About Me</h1>
+    <div class="section-container">
+      <div class="section__pic-container">
+        <img src="./assets/about-pic.png" alt="about pic" class="about-pic" />
+      </div>
+      <div class="about-details-container">
+        <div class="about-containers">
+          <div class="details-container">
+            <img src="./assets/experience.png" alt="Experience icon" class="icon" />
+            <h3>Experience</h3>
+            <p>5+ years <br />Technical Writing</p>
+          </div>
+          <div class="details-container">
+            <img src="./assets/education.png" alt="Education icon" class="icon" />
+            <h3>Education</h3>
+            <p>B.A. Bachelors Degree</p>
+          </div>
+        </div>
+        <div class="text-container">
+          <p>My name is Geofrey Victory, and I am pleased to present my portfolio.
+            As a professional, I always think big picture and conceptualize
+            ideas to motivate others to see possibilities in problem solving.
+            I have a long-term mindset, and I like to plan and organize a timeline
+            accordingly. I am also an optimizer. I like to assess, analyze, and strategize
+            improvements to better efficiency.</p>
+          <br>
+          <p>But most importantly, I like to think of myself as a networker.
+            I excel at making connections to build an idea and organizing that idea
+            to communicate it with others. I have a passion for identifying gaps of
+            knowledge and filling those gaps by ensuring everyone is working with
+            the same level of knowledge. My greatest strength is I can put myself
+            in the user scenario and optimize user stories accommodated to them.</p>
+        </div>
+      </div>
+    </div>
+    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#experience'" />
+  </section>
+  <section id="experience">
+    <p class="section__text__p1">Explore My</p>
+    <h1 class="title">Experience</h1>
+    <div class="experience-details-container">
+      <div class="about-containers">
+        <div class="details-container">
+          <h2 class="experience-sub-title">Technical Documentation</h2>
+          <div class="article-container">
+            <article>
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>API Writing</h3>
+                <p>Experienced</p>
+              </div>
+            </article>
+            <article>
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>DITA</h3>
+                <p>Experienced</p>
+              </div>
+            </article>
+            <article>
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>HTML & CSS</h3>
+                <p>Experienced</p>
+              </div>
+            </article>
+            <article>
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>UX Writing</h3>
+                <p>Experienced</p>
+              </div>
+            </article>
+            <article>
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>Video Editing</h3>
+                <p>Experienced</p>
+              </div>
+            </article>
+            <article>
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>Localization</h3>
+                <p>Experienced</p>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="details-container">
+          <h2 class="experience-sub-title">Other Skills</h2>
+          <div class="article-container">
+            <article>
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>Jira</h3>
+                <p>Experienced</p>
+              </div>
+            </article>
+            <article>
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>Software Development</h3>
+                <p>Experienced</p>
+              </div>
+            </article>
+            <article>
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>Generative AI</h3>
+                <p>Experienced</p>
+              </div>
+            </article>
+            <article>
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>Git</h3>
+                <p>Experienced</p>
+              </div>
+            </article>
+            <article>
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>Python</h3>
+                <p>Experienced</p>
+              </div>
+            </article>
+            <article>
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>SQL</h3>
+                <p>Intermediate</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#projects'" />
+  </section>
+  <section id="projects">
+    <p class="section__text__p1">Browse My Recent</p>
+    <h1 class="title">Projects</h1>
+    <div class="experience-details-container">
+      <div class="about-containers">
+        
+        <div class="details-container color-container">
+          <div class="article-container">
+            <img src="./assets/bl-doc-portal.png" alt="Project 2" class="project-img" />
+          </div>
+          <h2 class="experience-sub-title project-title">BlackLine Open API Platform</h2>
+          <div class="btn-container">
+            <button class="btn btn-color-2 project-btn" onclick="location.href='https://developer.blackline.com/'">
+              Developer Portal
+            </button>
+          </div>
+        </div>
+        <div class="details-container color-container">
+          <div class="article-container">
+            <img src="./assets/mori-point-vision.gif" alt="Mori Point AI Vision Demo" class="project-img" />
+          </div>
+          <h2 class="experience-sub-title project-title">Mori Point Vision</h2>
+          <p class="project-description" style="text-align: justify; margin: 10px 0; color: #555;">
+            A real-time Computer Vision pipeline deploying YOLOv11 to monitor trail activity and
+            environmental conditions via a 4K live stream. Engineered for high-throughput performance on Apple Silicon,
+            the system converts live pixels into structured analytics.
+          </p>
+          <div class="btn-container">
+            <button class="btn btn-color-2 project-btn"
+              onclick="location.href='https://github.com/geofvictory/mori-point-vision'">
+              GitHub Repo
+            </button>
+            <button class="btn btn-color-2 project-btn"
+              onclick="window.open('./assets/mori-point-chart.png', '_blank')">
+              Inference Analytics
+            </button>
+          </div>
+        </div>
+        <div class="details-container color-container">
+          <div class="article-container">
+            <img src="./assets/malwarebytes-project.png" alt="Project 3" class="project-img" />
+          </div>
+          <h2 class="experience-sub-title project-title">Malwarebytes Service</h2>
+          <div class="btn-container">
+            <button class="btn btn-color-2 project-btn"
+              onclick="location.href='https://api.malwarebytes.com/nebula/v1/docs'">
+              API docs
+            </button>
+            <button class="btn btn-color-2 project-btn"
+              onclick="location.href='https://service.malwarebytes.com/hc/en-us/p/oneview'">
+              User guides
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'" />
+  </section>
+  <section id="awards">
+    <p class="section__text__p1">See My</p>
+    <h1 class="title">Awards and Certificates</h1>
+    <div class="section-container">
+      <div class="section__pic-container">
+        <img src="./assets/blackline.png" alt="BlackLine" class="award-pic" />
+        <div class="awards-details-container">
+          <div class="awards-containers">
+            <div class="details-container">
+              <img src="./assets/experience.png" alt="awards icon" class="icon" />
+              <h3>BlackLine</h3>
+              <p>Product Excellence <br />January 2022</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section__pic-container">
+        <a href="https://www.udemy.com/certificate/UC-f2925159-7096-46cf-81dd-3406f13fcd23/">
+          <img src="./assets/udemy.png" alt="udemy" class="award-pic" /> </a>
+        <div class="awards-details-container">
+          <div class="awards-containers">
+            <div class="details-container">
+              <img src="./assets/experience.png" alt="awards icon" class="icon" />
+              <h3>Udemy</h3>
+              <p>Technical Writing: <br />How to Write API Software Documentation</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="contact">
+    <p class="section__text__p1">Get in Touch</p>
+    <h1 class="title">Contact Me</h1>
+    <div class="contact-info-upper-container">
+      <div class="contact-info-container">
+        <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon" />
+        <p><a href="mailto:geofvictory@gmail.com">geofvictory@gmail.com</a></p>
+      </div>
+      <div class="contact-info-container">
+        <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
+        <p><a href="https://www.linkedin.com/in/geofrey-victory/">LinkedIn</a></p>
+      </div>
+      <div class="contact-info-container">
+      </div>
+    </div>
+  </section>
+  <footer>
+    <nav>
+      <div class="nav-links-container">
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#experience">Experience</a></li>
@@ -22,435 +325,9 @@
         </ul>
       </div>
     </nav>
-    <nav id="hamburger-nav">
-      <div><a href="index.html"><img src="/assets/logo.png" class="logo"></a></div>
-      <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#awards">Awards</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-        </div>
-      </div>
-    </nav>
-    <section id="profile">
-      <div class="section__pic-container">
-        <img src="assets/profile-pic.png" alt="Profile picture" class="profile-pic"/>
-      </div>
-      <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
-        <h1 class="title">Geofrey Victory</h1>
-        <p class="section__text__p2">Technical Writer</p>
-        <div class="btn-container">
-          <button
-            class="btn btn-color-2"
-            onclick="window.open('https://docs.google.com/document/d/16erF8Qj_Y5Gp_J_gq_OBRZ53u1FeN9ln/edit?usp=sharing&ouid=107649084665111973537&rtpof=true&sd=true')"
-          >
-          Résumé
-          </button>
-          <button class="btn btn-color-1" onclick="location.href='./#contact'">
-            Contact Info
-          </button>
-        </div>
-        <div id="socials-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="My LinkedIn profile"
-            class="icon"
-            onclick="location.href='https://www.linkedin.com/in/geofrey-victory/'"
-          />
-          <img
-            src="./assets/github.png"
-            alt="My Github profile"
-            class="icon"
-            onclick="location.href='https://github.com/geofvictory'"
-          />
-        </div>
-      </div>
-    </section>
-    <section id="about">
-      <p class="section__text__p1">Get To Know More</p>
-      <h1 class="title">About Me</h1>
-      <div class="section-container">
-        <div class="section__pic-container">
-          <img
-            src="./assets/about-pic.png"
-            alt="about pic"
-            class="about-pic"
-          />
-        </div>
-        <div class="about-details-container">
-          <div class="about-containers">
-            <div class="details-container">
-              <img
-                src="./assets/experience.png"
-                alt="Experience icon"
-                class="icon"
-              />
-              <h3>Experience</h3>
-              <p>5+ years <br />Technical Writing</p>
-            </div>
-            <div class="details-container">
-              <img
-                src="./assets/education.png"
-                alt="Education icon"
-                class="icon"
-              />
-              <h3>Education</h3>
-              <p>B.A. Bachelors Degree</p>
-            </div>
-          </div>
-          <div class="text-container">
-             <p>My name is Geofrey Victory, and I am pleased to present my portfolio.
-              As a professional, I always think big picture and conceptualize 
-              ideas to motivate others to see possibilities in problem solving. 
-              I have a long-term mindset, and I like to plan and organize a timeline 
-              accordingly. I am also an optimizer. I like to assess, analyze, and strategize 
-              improvements to better efficiency.</p>
-              <br>
-              <p>But most importantly, I like to think of myself as a networker. 
-              I excel at making connections to build an idea and organizing that idea 
-              to communicate it with others. I have a passion for identifying gaps of 
-              knowledge and filling those gaps by ensuring everyone is working with 
-              the same level of knowledge. My greatest strength is I can put myself 
-              in the user scenario and optimize user stories accommodated to them.</p>
-          </div>
-        </div>
-      </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#experience'"
-      />
-    </section>
-    <section id="experience">
-      <p class="section__text__p1">Explore My</p>
-      <h1 class="title">Experience</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container">
-            <h2 class="experience-sub-title">Technical Documentation</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>API Writing</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>DITA</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>HTML & CSS</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>UX Writing</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Video Editing</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Localization</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-            </div>
-          </div>
-          <div class="details-container">
-            <h2 class="experience-sub-title">Other Skills</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Jira</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Software Development</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Generative AI</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Git</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Python</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>SQL</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-      </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#projects'"
-      />
-    </section>
-    <section id="projects">
-      <p class="section__text__p1">Browse My Recent</p>
-      <h1 class="title">Projects</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container color-container">
-  <div class="article-container">
-    <img
-      src="./assets/mori-point-vision.gif"
-      alt="Mori Point AI Vision Demo"
-      class="project-img"
-    />
-  </div>
-  <h2 class="experience-sub-title project-title">Mori Point Vision</h2>
-  <div class="btn-container">
-    <button
-      class="btn btn-color-2 project-btn"
-      onclick="location.href='https://github.com/geofvictory/mori-point-vision'"
-    >
-      GitHub Repo
-    </button>
-    <button
-      class="btn btn-color-2 project-btn"
-      onclick="window.open('./assets/mori-point-chart.png', '_blank')"
-    >
-      Inference Analytics
-    </button>
-  </div>
-</div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/bl-doc-portal.png"
-                alt="Project 2"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">BlackLine Open API Platform</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://developer.blackline.com/'"
-              >
-                Developer Portal
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/malwarebytes-project.png"
-                alt="Project 3"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Malwarebytes Service</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://api.malwarebytes.com/nebula/v1/docs'"
-              >
-                API docs
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://service.malwarebytes.com/hc/en-us/p/oneview'"
-              >
-                User guides
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#contact'"
-      />
-    </section>
-    <section id="awards">
-      <p class="section__text__p1">See My</p>
-      <h1 class="title">Awards and Certificates</h1>
-      <div class="section-container">
-        <div class="section__pic-container">
-          <img
-            src="./assets/blackline.png"
-            alt="BlackLine"
-            class="award-pic"
-          />
-          <div class="awards-details-container">
-            <div class="awards-containers">
-              <div class="details-container">
-                <img
-                  src="./assets/experience.png"
-                  alt="awards icon"
-                  class="icon"
-                />
-                <h3>BlackLine</h3>
-                <p>Product Excellence <br />January 2022</p>
-              </div>
-            </div>
-          </div>
-        </div>
-          <div class="section__pic-container">
-            <a href="https://www.udemy.com/certificate/UC-f2925159-7096-46cf-81dd-3406f13fcd23/">
-              <img
-            src="./assets/udemy.png"
-            alt="udemy"
-            class="award-pic"
-          /> </a>
-          <div class="awards-details-container">
-            <div class="awards-containers">
-              <div class="details-container">
-                <img
-                  src="./assets/experience.png"
-                  alt="awards icon"
-                  class="icon"
-                />
-                <h3>Udemy</h3>
-                <p>Technical Writing: <br />How to Write API Software Documentation</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="contact">
-      <p class="section__text__p1">Get in Touch</p>
-      <h1 class="title">Contact Me</h1>
-      <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-          <img
-            src="./assets/email.png"
-            alt="Email icon"
-            class="icon contact-icon email-icon"
-          />
-          <p><a href="mailto:geofvictory@gmail.com">geofvictory@gmail.com</a></p>
-        </div>
-        <div class="contact-info-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="LinkedIn icon"
-            class="icon contact-icon"
-          />
-          <p><a href="https://www.linkedin.com/in/geofrey-victory/">LinkedIn</a></p>
-        </div>
-        <div class="contact-info-container">
-        </div>
-      </div>
-    </section>
-    <footer>
-      <nav>
-        <div class="nav-links-container">
-          <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#awards">Awards</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
-      <p>Copyright &#169; 2023 Geofrey Victory. All Rights Reserved.</p>
-    </footer>
-    <script src="script.js"></script>
-  </body>
+    <p>Copyright &#169; 2023 Geofrey Victory. All Rights Reserved.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
 </html>
