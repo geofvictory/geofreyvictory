@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Reference | Mori Point Vision</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../mediaqueries.css">
+    
+    <style>
+        /* Specific Documentation Overrides */
+        body { background-color: #ffffff; color: #333; }
+        .api-container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; display: grid; grid-template-columns: 250px 1fr; gap: 40px; }
+        
+        /* Sidebar Navigation */
+        .api-sidebar { position: sticky; top: 40px; height: fit-content; border-right: 1px solid #eee; padding-right: 20px; }
+        .api-sidebar h4 { font-size: 0.9rem; text-transform: uppercase; color: #888; margin-bottom: 1rem; }
+        .api-sidebar ul { list-style: none; padding: 0; }
+        .api-sidebar li { margin-bottom: 10px; }
+        .api-sidebar a { text-decoration: none; color: #333; font-size: 0.95rem; }
+        .api-sidebar a:hover { color: #1976d2; }
+
+        /* Content Areas */
+        .endpoint-block { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 80px; align-items: start; }
+        .method { display: inline-block; padding: 2px 8px; border-radius: 4px; font-weight: bold; font-size: 0.8rem; margin-right: 10px; }
+        .get { background: #e3f2fd; color: #1976d2; }
+        .wss { background: #f3e5f5; color: #7b1fa2; }
+        
+        .code-sample { background: #1e1e1e; color: #d4d4d4; padding: 20px; border-radius: 8px; font-family: 'Courier New', Courier, monospace; font-size: 0.85rem; overflow-x: auto; }
+        .code-header { color: #888; font-size: 0.75rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
+        
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 0.9rem; }
+        table th { text-align: left; border-bottom: 2px solid #eee; padding: 10px 5px; }
+        table td { padding: 12px 5px; border-bottom: 1px solid #eee; }
+
+        @media (max-width: 900px) {
+            .api-container { grid-template-columns: 1fr; }
+            .api-sidebar { display: none; }
+            .endpoint-block { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav style="padding: 20px; border-bottom: 1px solid #eee;">
+        <a href="../../index.html" style="text-decoration: none; color: #1976d2; font-weight: 600;">← Back to Portfolio</a>
+    </nav>
+
+    <div class="api-container">
+        <aside class="api-sidebar">
+            <h4>Mori Vision API</h4>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#authentication">Authentication</a></li>
+                <li><a href="#activity">Trail Activity</a></li>
+                <li><a href="#stream">Inference Stream</a></li>
+            </ul>
+        </aside>
+
+        <main class="api-content">
+            <section id="introduction">
+                <h1>API Reference <span style="font-size: 0.4em; color: #aaa; vertical-align: middle;">v1.0.0</span></h1>
+                <p>The Mori Point Vision API provides programmatic access to real-time object detection data and environmental trail telemetry. Optimized for low-latency integration with city planning dashboards and mobile applications.</p>
+            </section>
+
+            <hr style="margin: 40px 0; border: 0; border-top: 1px solid #eee;">
+
+            <section id="activity" class="endpoint-block">
+                <div class="prose">
+                    <h2>Retrieve Activity</h2>
+                    <p>Fetch aggregated trail counts based on historical YOLOv11 inference logs.</p>
+                    <p><span class="method get">GET</span> <code>/v1/analytics/activity</code></p>
+                    
+                    <table>
+                        <thead>
+                            <tr><th>Parameter</th><th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><code>class</code></td><td>Filter results (e.g. <code>person</code>, <code>dog</code>).</td></tr>
+                            <tr><td><code>window</code></td><td>Time range (default: <code>1h</code>).</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="code-sample">
+                    <div class="code-header">Response JSON</div>
+<pre>
+{
+  "status": "success",
+  "data": {
+    "location": "Mori Point",
+    "counts": {
+      "person": 14,
+      "dog": 3
+    }
+  }
+}
+</pre>
+                </div>
+            </section>
+
+            <section id="stream" class="endpoint-block">
+                <div class="prose">
+                    <h2>Real-time Stream</h2>
+                    <p>Open a persistent connection to receive per-frame inference metadata as it's processed.</p>
+                    <p><span class="method wss">WSS</span> <code>/v1/vision/stream</code></p>
+                    <p><strong>Note:</strong> Requires high-bandwidth connection for 30fps metadata throughput.</p>
+                </div>
+                <div class="code-sample">
+                    <div class="code-header">WebSocket Packet</div>
+<pre>
+{
+  "object": "person",
+  "confidence": 0.94,
+  "latency_ms": 22.4,
+  "bbox": [102, 340, 50, 110]
+}
+</pre>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
