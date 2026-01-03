@@ -1,73 +1,213 @@
 /* --- Documentation Global Styles --- */
 
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
+    line-height: 1.6;
+    color: #212529;
+}
+
 .api-container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 60px 40px;
     display: grid;
-    grid-template-columns: 250px 1fr; /* Sidebar | Content */
-    gap: 40px;
+    grid-template-columns: 280px 1fr; /* Sidebar | Content */
+    gap: 60px;
 }
 
 /* Sidebar Navigation */
 .api-sidebar {
     position: sticky;
-    top: 40px;
+    top: 100px;
     height: fit-content;
 }
 
 .api-sidebar h4 {
-    font-family: "Poppins", sans-serif;
-    font-size: 0.8rem;
-    letter-spacing: 1px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
     text-transform: uppercase;
-    color: #888;
-    margin-bottom: 1.5rem;
+    color: #6c757d;
+    margin-bottom: 20px;
+    padding: 0;
+}
+
+.api-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.api-sidebar li {
+    margin-bottom: 8px;
+}
+
+.api-sidebar a {
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: #495057;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    border-left: 2px solid transparent;
+    margin-left: -12px;
+    padding-left: 10px;
+}
+
+.api-sidebar a:hover {
+    background-color: #f8f9fa;
+    color: #0066cc;
+    border-left-color: #0066cc;
+}
+
+/* Main Content */
+.api-content h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    line-height: 1.2;
+}
+
+.api-content h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+.api-content > section {
+    margin-bottom: 80px;
+}
+
+.api-content p {
+    color: #495057;
+    font-size: 1rem;
+    margin-bottom: 16px;
 }
 
 /* Endpoint Sections */
 .endpoint-block {
     display: grid;
     grid-template-columns: 1fr 1fr; /* Prose | Code Sample */
-    gap: 30px;
+    gap: 40px;
     margin-bottom: 100px;
     align-items: start;
 }
 
-.method {
-    display: inline-block;
-    padding: 4px 10px;
+.prose code {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
     border-radius: 4px;
-    font-weight: bold;
-    font-size: 0.75rem;
-    font-family: monospace;
+    padding: 2px 6px;
+    font-family: 'Fira Code', 'Monaco', 'Courier New', monospace;
+    font-size: 0.9em;
+    color: #d63384;
 }
 
-.get { background: #e3f2fd; color: #1976d2; border: 1px solid #bbdefb; }
-.wss { background: #f3e5f5; color: #7b1fa2; border: 1px solid #e1bee7; }
+.method {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    font-family: 'Fira Code', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-right: 12px;
+}
+
+.get { 
+    background: #cfe2ff;
+    color: #0c63e4;
+    border: 1px solid #b6d4fe;
+}
+
+.wss { 
+    background: #e7d4f5;
+    color: #6f42c1;
+    border: 1px solid #d0a9e8;
+}
+
+.post {
+    background: #d1e7dd;
+    color: #0f5132;
+    border: 1px solid #badbcc;
+}
 
 /* Dark Code Blocks */
 .code-sample {
-    background: #1e1e1e; /* VS Code style dark theme */
-    color: #d4d4d4;
+    background: #0d1117;
+    color: #c9d1d9;
     padding: 24px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    font-family: 'Fira Code', 'Courier New', monospace;
+    border-radius: 8px;
+    border: 1px solid #30363d;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+    font-family: 'Fira Code', 'Monaco', 'Courier New', monospace;
     font-size: 0.85rem;
-    line-height: 1.6;
+    line-height: 1.5;
+    overflow-x: auto;
+}
+
+.code-sample pre {
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
 
 .code-header {
-    color: #569cd6; /* Light blue tech-style */
-    font-size: 0.7rem;
-    margin-bottom: 12px;
-    font-weight: bold;
+    color: #8b949e;
+    font-size: 0.75rem;
+    margin-bottom: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Table Styling */
+.api-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 24px;
+    font-size: 0.95rem;
+}
+
+.api-content table th {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 2px solid #dee2e6;
+    font-weight: 600;
+    color: #212529;
+    background-color: #f8f9fa;
+}
+
+.api-content table td {
+    padding: 12px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.api-content table td code {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9em;
 }
 
 /* Responsive Logic */
-@media screen and (max-width: 900px) {
-    .api-container { grid-template-columns: 1fr; }
-    .api-sidebar { display: none; } /* Hide sidebar on mobile */
-    .endpoint-block { grid-template-columns: 1fr; }
+@media screen and (max-width: 1024px) {
+    .api-container { 
+        grid-template-columns: 1fr; 
+        gap: 40px;
+        padding: 40px 20px;
+    }
+    .api-sidebar { 
+        display: none;
+    }
+    .endpoint-block { 
+        grid-template-columns: 1fr; 
+    }
 }
