@@ -1,0 +1,13 @@
+<topic id="pce_arch">
+  <title>PCE Architecture</title>
+  <body>
+    <p>The following diagram illustrates the relationship between the PCE and VEN.</p>
+    <foreign outputclass="mermaid">
+      <![CDATA[
+        graph LR
+          VEN[VEN Agent] -->|Context| PCE[PCE Brain]
+          PCE -->|Policy| VEN
+      ]]>
+    </foreign>
+  </body>
+</topic>

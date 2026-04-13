@@ -1,0 +1,11 @@
+name: Docs CI
+on: [push]
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Lint XML
+        run: xmllint --noout content/*.xml
+      - name: Generate Diagrams
+        run: mmdc -i content/diagrams/pce-flow.mmd -o output/pce-flow.svg
