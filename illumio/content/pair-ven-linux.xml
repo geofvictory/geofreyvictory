@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "topic.dtd">
+<topic id="pairing_linux">
+    <title>Pairing a VEN on Linux</title>
+    <shortdesc>Install and activate the Virtual Enforcement Node on a Linux-based workload.</shortdesc>
+    <body>
+        <section id="steps">
+            <title>Installation Steps</title>
+            <ol>
+                <li>Log in to the PCE Web Console and navigate to <strong>Infrastructure > Workloads</strong>.</li>
+                <li>Generate a pairing script using the <strong>Pair with Script</strong> option.</li>
+                <li>Copy the command and execute it on your target Linux host with root privileges.</li>
+            </ol>
+            <codeblock outputclass="bash">
+# Example Pairing Command
+curl -k https://pce.example.com:443/api/v18/software/ven/image --header 'Pairing-Key: [KEY]' | bash
+            </codeblock>
+        </section>
+        <section id="post_req">
+            <title>Verification</title>
+            <p>After the script completes, verify that the workload appears in the <strong>Workloads</strong> list with a status of <strong>Active</strong>.</p>
+        </section>
+    </body>
+</topic>

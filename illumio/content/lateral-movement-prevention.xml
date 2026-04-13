@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "topic.dtd">
+<topic id="lateral_movement_video">
+    <title>Video: Preventing Lateral Movement</title>
+    <body>
+        <section id="demo">
+            <title>Illumio Core Demo</title>
+            <object data="https://www.youtube.com/embed/sHjbhQus5jk" outputclass="video">
+                <desc>Demo of preventing lateral movement with microsegmentation.</desc>
+            </object>
+        </section>
+        <section id="overview">
+            <title>Technical Summary</title>
+            <p>As demonstrated in the video, Illumio provides a holistic view of the data center through the <strong>Illumination Map</strong>. This map allows administrators to visualize dependencies and move from a state of <em>Visibility</em> to <em>Enforcement</em>.</p>
+            <p>By applying policies agnostic of the underlying network, Illumio effectively stops the spread of ransomware and unauthorized lateral movement within a flat network environment.</p>
+        </section>
+    </body>
+</topic>
