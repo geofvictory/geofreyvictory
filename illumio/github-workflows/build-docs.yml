@@ -1,11 +1,29 @@
-name: Docs CI
-on: [push]
+name: Docs Pipeline
+
+on:
+  pull_request:
+    paths:
+      - 'content/**'
+
 jobs:
-  validate:
+  build-and-validate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Lint XML
-        run: xmllint --noout content/*.xml
-      - name: Generate Diagrams
-        run: mmdc -i content/diagrams/pce-flow.mmd -o output/pce-flow.svg
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Validate XML Structure
+        run: |
+          # Ensuring all DITA files are well-formed
+          find content/ -name "*.xml" | xargs xmllint --noout
+
+      - name: Render Mermaid to SVG
+        uses: neenjaw/mermaid-cli-action@v2
+        with:
+          files: 'content/diagrams/*.mmd'
+          outputDir: 'output/images'
+
+      - name: Check for Broken Links
+        uses: lycheeverse/lychee-action@v1
+        with:
+          args: content/**/*.xml
