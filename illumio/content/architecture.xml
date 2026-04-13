@@ -1,13 +1,23 @@
-<topic id="pce_arch">
-  <title>PCE Architecture</title>
-  <body>
-    <p>The following diagram illustrates the relationship between the PCE and VEN.</p>
-    <foreign outputclass="mermaid">
-      <![CDATA[
-        graph LR
-          VEN[VEN Agent] -->|Context| PCE[PCE Brain]
-          PCE -->|Policy| VEN
-      ]]>
-    </foreign>
-  </body>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="pce_arch_overview">
+    <title>PCE and VEN Architecture</title>
+    <body>
+        <section id="visual-overview">
+            <title>Architectural Interaction</title>
+            <p>The Policy Compute Engine (PCE) acts as the central brain, while Virtual Enforcement Nodes (VENs) provide visibility and enforcement at the workload level.</p>
+            
+            <foreign outputclass="mermaid-diagram">
+                <![CDATA[
+                graph TD
+                    PCE[PCE: Policy Compute Engine]
+                    VEN[VEN: Virtual Enforcement Node]
+                    
+                    VEN -->|1. Flow & Context| PCE
+                    PCE -->|2. Calculated Policy| VEN
+                    VEN -->|3. Program OS Firewall| Firewall[OS Firewall]
+                ]]>
+            </foreign>
+        </section>
+    </body>
 </topic>
