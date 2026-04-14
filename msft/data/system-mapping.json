@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "module": "Account Reconciliations",
+  "version": "2.1.0",
+  "mappings": [
+    {
+      "ui_term": "Auto-Certification",
+      "backend_object": "bl_logic.auto_cert_engine",
+      "parameters": [
+        "account_profile.is_active",
+        "rec_logic.threshold_amt"
+      ],
+      "description": "Determines if an account meets criteria for hands-free certification."
+    },
+    {
+      "ui_term": "Unidentified Difference",
+      "backend_object": "rec_summary.variance_unresolved",
+      "data_type": "Currency",
+      "logic_source": "GL_Balance - Subledger_Total - Explained_Items",
+      "description": "The 'Gap' that prevents a Preparer from completing certification."
+    },
+    {
+      "ui_term": "Decertify",
+      "backend_action": "workflow.status_reversal",
+      "permission_required": "Approver_Role_ID || Admin_Role_ID",
+      "constraints": {
+        "time_limit_hours": 24,
+        "requires_comment": true
+      },
+      "description": "Action to revert a certified status to 'Incomplete'."
+    },
+    {
+      "ui_term": "Template Control",
+      "backend_object": "template_config.control_set",
+      "mapping_error_code": "ERR_TMPL_CTRL_001",
+      "description": "Defines the fields visible to the Preparer on the reconciliation face."
+    }
+  ]
+}
