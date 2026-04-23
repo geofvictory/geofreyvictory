@@ -22,7 +22,7 @@ docs:
       - "traefik.http.routers.docs.rule=Host(`localhost`)"
       - "traefik.http.services.docs.loadbalancer.server.port=3000" # Add this line
     command: sh -c "npm install && npm start -- --host 0.0.0.0 --port 3000"
-  search:
+search:
     image: getmeili/meilisearch:latest
     environment:
       - MEILI_MASTER_KEY=well_ordered_key_123
