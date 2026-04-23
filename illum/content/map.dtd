@@ -1,9 +1,0 @@
-<!ELEMENT map (title?, (topichead | topicref)*)>
-
-<!ELEMENT title (#PCDATA)>
-
-<!ELEMENT topichead (topicref | topichead)*>
-<!ATTLIST topichead navtitle CDATA #REQUIRED>
-
-<!ELEMENT topicref EMPTY>
-<!ATTLIST topicref href CDATA #REQUIRED>
