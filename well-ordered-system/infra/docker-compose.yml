@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  # The Edge: Reverse Proxy & Load Balancer
+  gateway:
+    image: traefik:v2.10
+    command:
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--entrypoints.web.address=:80"
+    ports:
+      - "80:80"       # Web Traffic
+      - "8080:8080"   # Traefik Dashboard (to show your system health)
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
+  # The Content: Your Documentation Engine
+  docs:
+    image: node:18-alpine
+    working_dir: /app
+    volumes:
+      - ../src:/app
+    labels:
+      - "traefik.http.routers.docs.rule=Host(`localhost`)"
+    # Note: In a real repo, you'd use a Dockerfile, 
+    # but this command helps you get Docusaurus started immediately.
+    command: sh -c "npx create-docusaurus@latest . classic --typescript && npm run start -- --host 0.0.0.0"
+
+  # The Discovery: Search Engine
+  search:
+    image: getmeili/meilisearch:latest
+    environment:
+      - MEILI_MASTER_KEY=well_ordered_key_123
+    ports:
+      - "7700:7700"
+    labels:
+      - "traefik.http.routers.search.rule=Host(`search.localhost`)"
