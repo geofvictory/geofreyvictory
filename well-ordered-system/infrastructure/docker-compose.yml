@@ -17,8 +17,9 @@ services:
     volumes:
       - ../src:/app
     labels:
-      - "traefik.http.routers.docs.rule=Host(`localhost`)"
+      - "traefik.http.routers.docs.rule=PathPrefix(`/`)"
       - "traefik.http.services.docs.loadbalancer.server.port=3000"
+      - "traefik.http.routers.docs.priority=1" # Low priority
     command: sh -c "npm install && npm start -- --host 0.0.0.0 --port 3000"
 
   search:
@@ -28,4 +29,6 @@ services:
     ports:
       - "7700:7700"
     labels:
-      - "traefik.http.routers.search.rule=Host(`search.localhost`)"
+      - "traefik.http.routers.search.rule=PathPrefix(`/api/search`)" 
+      - "traefik.http.services.search.loadbalancer.server.port=7700"
+      - "traefik.http.routers.search.priority=10" # Higher priority
