@@ -22,8 +22,7 @@ services:
       - "traefik.http.routers.docs.rule=Host(`localhost`)"
     # Note: In a real repo, you'd use a Dockerfile, 
     # but this command helps you get Docusaurus started immediately.
-    command: sh -c "npx create-docusaurus@latest . classic --typescript && npm run start -- --host 0.0.0.0"
-
+    command: npm start -- --host 0.0.0.0 --port 3000
   # The Discovery: Search Engine
   search:
     image: getmeili/meilisearch:latest
