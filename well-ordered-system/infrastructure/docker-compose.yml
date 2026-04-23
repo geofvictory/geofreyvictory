@@ -42,6 +42,6 @@ services:
       - "traefik.http.services.search.loadbalancer.server.port=7700"
       - "traefik.http.routers.search.priority=10" # Higher priority
   
-  networks:
+networks:
   well-ordered-net:
     driver: bridge
