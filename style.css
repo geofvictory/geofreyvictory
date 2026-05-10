@@ -303,6 +303,8 @@ section {
 .details-container {
   padding: 1.5rem;
   flex: 1;
+  min-width: 350px;
+  max-width: 450px;
   background: white;
   border-radius: 2rem;
   border: rgb(53, 53, 53) 0.1rem solid;
@@ -373,8 +375,18 @@ article .icon {
 
 .project-img {
   border-radius: 2rem;
-  width: 90%;
-  height: 90%;
+  width: 300px;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 1.5rem auto;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+
+/* Add padding to the projects section to keep content away from window edge */
+#projects {
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .project-title {
