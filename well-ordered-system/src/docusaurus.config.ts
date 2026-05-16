@@ -5,30 +5,30 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'Well-Ordered System Documentation',
-  tagline: 'Dinosaurs are cool',
+  title: 'Well-Ordered System',
+  tagline: 'Docs-as-Code Infrastructure Platform',
   favicon: 'img/favicon.ico',
 
-  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
+
+  // Future flags
   future: {
-    v4: true, // Improve compatibility with the upcoming Docusaurus v4
+    v4: true, 
   },
 
- // Set the production url of your site here
-  url: 'http://localhost', // Change from the .example.com link
-  // Set the /<baseUrl>/ pathname under which your site is served
-  baseUrl: '/',            // Keep this as '/'
+  // 1. Set the exact production URL where your docs will live
+  url: 'https://docs.geofreyvictory.com', 
+  
+  // 2. Keep this as '/' since it's serving from the root of your subdomain
+  baseUrl: '/',            
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  // 3. Configure your GitHub parameters for automated deployment
+  organizationName: 'geofvictory', // Your GitHub username
+  projectName: 'well-ordered-system', // The exact name of your GitHub repository
+  deploymentBranch: 'gh-pages',     // The branch where compiled HTML will be pushed
+  trailingSlash: false,             // Recommended setting for GitHub Pages clean URLs
 
   onBrokenLinks: 'throw',
-
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
+  // ... rest of your presets and themeConfig remain exactly the same
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
